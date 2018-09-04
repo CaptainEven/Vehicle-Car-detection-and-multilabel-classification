@@ -4,7 +4,6 @@
 ## 效果如下: Vehicle detection and recognition results are as follows： </br>
 ![](https://github.com/CaptainEven/Vehicle-Car-detection-and-multilabel-classification/blob/master/test_result/test_5.jpg)
 ![](https://github.com/CaptainEven/Vehicle-Car-detection-and-multilabel-classification/blob/master/test_result/test_17.jpg)
-
 </br>
 
 ## 使用方法
