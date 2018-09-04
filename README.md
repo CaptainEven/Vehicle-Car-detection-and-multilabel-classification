@@ -5,8 +5,10 @@
 ![](https://github.com/CaptainEven/Vehicle-Car-detection-and-multilabel-classification/blob/master/test_result/test_5.jpg)
 ![](https://github.com/CaptainEven/Vehicle-Car-detection-and-multilabel-classification/blob/master/test_result/test_17.jpg)
 
-
 </br>
+
+## 使用方法
+python Vehicle_DC -src_dir your_imgs_dir -dst_dir your_result_dir
 
 ### 程序简介 brief introductions
 #### (1). 程序包含两大模块:  The program consists of two parts: first, car detection(only provides model loading and inference code, if you need training code, you can refer to [pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train)); the car attributes classiyfing(provide both training and testing code, it will predict a vehicle's body color, body direction and car type)
@@ -16,6 +18,6 @@
 #### (2). 程序模块详解 modules detailed introduction </br>
 ##### <1>. VehicleDC.py </br>
 此模块主要是对汽车检测和多标签识别进行封装，输入测试目录和存放结果目录。主类Car_DC, 函数__init__主要负责汽车检测、汽车识别两个模型的初始化。
-函数detect_classify负责逐张图像的检测和识别：首先对输入图像进行预处理，统一输入格式，然后输出该图像所有的车的检测框。
-
+函数detect_classify负责逐张图像的检测和识别：首先对输入图像进行预处理，统一输入格式，然后输出该图像所有的车的检测框。通过函数process_predict做nms, 
+坐标系转换，得到所有最终的检测框。
 
