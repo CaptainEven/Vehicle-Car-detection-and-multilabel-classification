@@ -10,4 +10,4 @@
 </br>
 
 ### 程序简介 program introductions
-#### (1). 程序包含两大模块: 车辆检测模块(只提供检测, 训练代码可以参考[pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train)
+#### (1). 程序包含两大模块: 车辆检测模块(只提供检测, 训练代码可以参考[pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train)); 车辆属性的多标签识别(包含车辆颜色、车辆朝向、车辆类型)，将两个模块结合在一起，实现车辆的检测和识别，对智能交通信息，进行了一定的结构化提取。
