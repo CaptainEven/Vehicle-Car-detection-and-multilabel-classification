@@ -19,5 +19,5 @@ python Vehicle_DC -src_dir your_imgs_dir -dst_dir your_result_dir
 ##### <1>. VehicleDC.py </br>
 此模块主要是对汽车检测和多标签识别进行封装，输入测试目录和存放结果目录。主类Car_DC, 函数__init__主要负责汽车检测、汽车识别两个模型的初始化。
 函数detect_classify负责逐张图像的检测和识别：首先对输入图像进行预处理，统一输入格式，然后输出该图像所有的车的检测框。通过函数process_predict做nms, 
-坐标系转换，得到所有最终的检测框。然后程序会调用函数cls_draw_bbox。在cls_draw_bbox中逐一处理每个检测框， 首先取出检测框区域的ROI， 送入车辆多标签分类器中。分类器采用B-CNN算法，参考[模型文件链接](https://arxiv.org/pdf/1709.09890.pdf)，B-CNN主要用于训练端到端的细粒度分类。
+坐标系转换，得到所有最终的检测框。然后程序会调用函数cls_draw_bbox。在cls_draw_bbox中逐一处理每个检测框， 首先取出检测框区域的ROI， 送入车辆多标签分类器中。分类器采用B-CNN算法，参考[paper链接](https://arxiv.org/pdf/1709.09890.pdf)，B-CNN主要用于训练端到端的细粒度分类。
 
