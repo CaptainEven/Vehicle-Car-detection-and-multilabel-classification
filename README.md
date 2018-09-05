@@ -1,5 +1,5 @@
 # Vehicle-Car-detection-and-multilabel-classification 车辆检测和多标签属性识别
-## 使用YOLO_v3_tiny和B-CNN实现街头车辆的检测和车辆属性的多标签识别 (Using yolo_v3_tiny to do vehicle or car detection and attribute's multilabel classification or recognize)
+## 一个精简的框架，使用YOLO_v3_tiny和B-CNN实现街头车辆的检测和车辆属性的多标签识别。 (A precise framework for using yolo_v3_tiny to do vehicle or car detection and attribute's multilabel classification or recognize)
 
 ## 效果如下: Vehicle detection and recognition results are as follows： </br>
 ![](https://github.com/CaptainEven/Vehicle-Car-detection-and-multilabel-classification/blob/master/test_result/test_5.jpg)
@@ -11,7 +11,8 @@ python Vehicle_DC -src_dir your_imgs_dir -dst_dir your_result_dir
 
 ## 训练好的模型文件(包括车辆检测模型和多标签分类模型) trained models on baidu drive
 [Tranied models-vehicle detection](https://pan.baidu.com/s/1OhtyRVDcodWpSR2HyhnGTw) </br>
-[Tranied models-vehicle classification](https://pan.baidu.com/s/1XmzjvCgOrrVv0NWTt4Fm3g)
+[Tranied models-vehicle classification](https://pan.baidu.com/s/1XmzjvCgOrrVv0NWTt4Fm3g) </br>
+在运行Vehicle_DC脚本之前，先下载上面的模型文件或者使用自己预先训练好的模型文件，将car_detect.weights（用于检测）放在项目根目录，将epoch_39.pth放在根目录下的checkpoints目录下，即可使用Vehicle_DC运行。 Before running Vehicle_DC, you should download provided model files provided above or use your own pretrained models. If using models provided, you need to place car_detect.weights on root directory of this project, and place epoch_39.pth on root/checkpoints/.
 
 ### 程序简介 brief introductions
 #### (1). 程序包含两大模块:  The program consists of two parts: first, car detection(only provides model loading and inference code, if you need training code, you can refer to [pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train)); the car attributes classiyfing(provide both training and testing code, it will predict a vehicle's body color, body direction and car type)
