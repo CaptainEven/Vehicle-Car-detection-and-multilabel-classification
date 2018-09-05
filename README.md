@@ -26,12 +26,16 @@ Combining these two modules together, you can do vehicle detection and multi-lab
 此模块主要是对汽车检测和多标签识别进行封装，输入测试目录和存放结果目录。主类Car_DC, 函数__init__主要负责汽车检测、汽车识别两个模型的初始化。
 函数detect_classify负责逐张对图像进行检测和识别：首先对输入图像进行预处理，统一输入格式，然后，输出该图像所有的车的检测框。通过函数process_predict做nms, 
 坐标系转换，得到所有最终的检测框。然后，程序调用函数cls_draw_bbox，在cls_draw_bbox中，逐一处理每个检测框。首先，取出原图像检测框区域检测框对应的的ROI(region of interest)， 将ROI送入车辆多标签分类器。分类器调用B-CNN算法对ROI中的车辆进行多标签属性分类。参考[paper链接](https://arxiv.org/pdf/1709.09890.pdf)。B-CNN主要用于训练端到端的细粒度分类。本程序对论文中的网络结构做了一定的适应性修改：为了兼顾程序的推断速度和准确度，不同于论文中采用的Vgg-16，这里的B-CNN的基础网络采用Resnet-18。</br>
-##### 耗时统计
-车辆检测模块： 单张图像推断，在单个GTX 1050TI GPU上单张约18ms。 </br>
-车辆多标签识别模块：单张图像推断耗时，在单个GTX TITAN GPU上约7ms，在单个GTX 1050TI GPU上单张约10ms。 </br>
+##### 耗时统计耗时
+车辆检测： 单张图像推断耗时，在单个GTX 1050TI GPU上约18ms。 </br>
+车辆多标签识别：单张图像推断耗时，在单个GTX TITAN GPU上约7ms，在单个GTX 1050TI GPU上约10ms。 </br>
 
-##### <2>. 训练、测试数据模块 dataset.py </br>
+##### <2>. 车辆多标签数据模块（由于保密协议等原因暂时不能公开数据集） dataset.py </br>
 训练、测试数据类别按照子目录存放，子目录名即label，Color_Direction_type，如Yellow_Rear_suv。 </br>
 Vehicle类重载了data.Dataset的init, getitem, len方法： </br>
 函数__init__负责初始化数据路径，数据标签，由于数据标签是多标签类型，故按照分段one-hot编码即可。 </br>
 函数__getitem__负责迭代返回数据和标签，返回的数据需要经过标准化等预处理；函数__len__获取数据的总数量。
+
+##### <3>. 车辆多标签训练、测试模块 train_vehicle_multilabel.py
+此模块负责车辆多标签的训练和测试。训练过程选择交叉熵作为损失函数，需要注意的是，由于是多标签分类，故计算loss的时候需要累加各个标签的loss，其中loss = loss_color + loss_direction + 2.0 * loss_type，根据经验，将车辆类型的loss权重放到到2倍效果较好。
+
