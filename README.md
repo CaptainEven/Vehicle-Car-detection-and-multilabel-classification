@@ -30,4 +30,6 @@ Combining these two modules together, you can do vehicle detection and multi-lab
 车辆检测模块： 单张图像推断，在单个GTX 1050TI GPU上单张约18ms。 </br>
 车辆多标签识别模块：单张图像推断耗时，在单个GTX TITAN GPU上约7ms，在单个GTX 1050TI GPU上单张约10ms。 </br>
 
-##### <2>. train_vehicle_multilabel.py </br>
+##### <2>. 训练、测试数据模块 dataset.py </br>
+训练、测试数据类别按照子目录存放，子目录名即label，Color_Direction_type，如Yellow_Rear_suv。 </br>
+Vehicle类重载了data.Dataset的__init__, __getitem__, __len__方法。
