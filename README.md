@@ -32,4 +32,6 @@ Combining these two modules together, you can do vehicle detection and multi-lab
 
 ##### <2>. 训练、测试数据模块 dataset.py </br>
 训练、测试数据类别按照子目录存放，子目录名即label，Color_Direction_type，如Yellow_Rear_suv。 </br>
-Vehicle类重载了data.Dataset的__init__, __getitem__, __len__方法。
+Vehicle类重载了data.Dataset的init, getitem, len方法： </br>
+函数__init__负责初始化数据路径，数据标签，由于数据标签是多标签类型，故按照分段one-hot编码即可。 </br>
+函数__getitem__负责迭代返回数据和标签，返回的数据需要经过标准化等预处理；函数__len__获取数据的总数量。
