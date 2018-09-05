@@ -12,7 +12,7 @@ python Vehicle_DC -src_dir your_imgs_dir -dst_dir your_result_dir
 ## 训练好的模型文件(包括车辆检测模型和多标签分类模型) trained models on baidu drive
 [Tranied models-vehicle detection](https://pan.baidu.com/s/1OhtyRVDcodWpSR2HyhnGTw) </br>
 [Tranied models-vehicle classification](https://pan.baidu.com/s/1XmzjvCgOrrVv0NWTt4Fm3g) </br>
-在运行Vehicle_DC脚本之前，先下载上面的模型文件或者使用自己预先训练好的模型文件，将car_detect.weights（用于检测）放在项目根目录，将epoch_39.pth放在根目录下的checkpoints目录下，即可使用Vehicle_DC运行。</br> 
+在运行Vehicle_DC脚本之前，先下载上面的模型文件或者使用自己预先训练好的模型文件，将car_detect.weights（用于检测）放在项目根目录，将epoch_39.pth（用于多标签识别）放在根目录下的checkpoints目录下，即可使用Vehicle_DC运行。</br> 
 Before running Vehicle_DC, you should download provided model files provided above or use your own pretrained models. If using models provided, you need to place car_detect.weights on root directory of this project, and place epoch_39.pth on root/checkpoints/.
 
 ### 程序简介 brief introductions
