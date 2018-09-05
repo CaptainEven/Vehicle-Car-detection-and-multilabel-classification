@@ -9,8 +9,8 @@
 ## 使用方法 Usage
 python Vehicle_DC -src_dir your_imgs_dir -dst_dir your_result_dir
 
-## 训练好的模型文件(包括车辆检测模型和多标签分类模型) trained models onbaidu drive
-[Tranied models-vehicle detection](https://pan.baidu.com/s/1OhtyRVDcodWpSR2HyhnGTw)
+## 训练好的模型文件(包括车辆检测模型和多标签分类模型) trained models on baidu drive
+[Tranied models-vehicle detection](https://pan.baidu.com/s/1OhtyRVDcodWpSR2HyhnGTw) </br>
 [Tranied models-vehicle classification](https://pan.baidu.com/s/1XmzjvCgOrrVv0NWTt4Fm3g)
 
 ### 程序简介 brief introductions
