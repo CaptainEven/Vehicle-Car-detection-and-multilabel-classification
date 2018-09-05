@@ -6,8 +6,11 @@
 ![](https://github.com/CaptainEven/Vehicle-Car-detection-and-multilabel-classification/blob/master/test_result/test_17.jpg)
 </br>
 
-## 使用方法
+## 使用方法 Usage
 python Vehicle_DC -src_dir your_imgs_dir -dst_dir your_result_dir
+
+## 训练好的模型文件(包括车辆检测模型和多标签分类模型) trained models
+
 
 ### 程序简介 brief introductions
 #### (1). 程序包含两大模块:  The program consists of two parts: first, car detection(only provides model loading and inference code, if you need training code, you can refer to [pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train)); the car attributes classiyfing(provide both training and testing code, it will predict a vehicle's body color, body direction and car type)
