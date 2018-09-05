@@ -25,5 +25,6 @@ Combining these two modules together, you can do vehicle detection and multi-lab
 ##### <1>. VehicleDC.py </br>
 此模块主要是对汽车检测和多标签识别进行封装，输入测试目录和存放结果目录。主类Car_DC, 函数__init__主要负责汽车检测、汽车识别两个模型的初始化。
 函数detect_classify负责逐张对图像进行检测和识别：首先对输入图像进行预处理，统一输入格式，然后，输出该图像所有的车的检测框。通过函数process_predict做nms, 
-坐标系转换，得到所有最终的检测框。然后，程序调用函数cls_draw_bbox，在cls_draw_bbox中，逐一处理每个检测框。首先，取出原图像检测框区域检测框对应的的ROI(region of interest)， 将ROI送入车辆多标签分类器。分类器调用B-CNN算法对ROI中的车辆进行多标签属性分类。参考[paper链接](https://arxiv.org/pdf/1709.09890.pdf)。B-CNN主要用于训练端到端的细粒度分类。本程序对论文中的网络结构做了一定的适应性修改：为了兼顾程序的推断速度和准确度，不同于论文中采用的Vgg-16，这里的B-CNN的基础网络采用Resnet-18。多标签识别模块单张图像推断耗时，在单个GTX TITAN GPU上约7ms，在单个GTX 1050TI GPU上单张约10ms。
+坐标系转换，得到所有最终的检测框。然后，程序调用函数cls_draw_bbox，在cls_draw_bbox中，逐一处理每个检测框。首先，取出原图像检测框区域检测框对应的的ROI(region of interest)， 将ROI送入车辆多标签分类器。分类器调用B-CNN算法对ROI中的车辆进行多标签属性分类。参考[paper链接](https://arxiv.org/pdf/1709.09890.pdf)。B-CNN主要用于训练端到端的细粒度分类。本程序对论文中的网络结构做了一定的适应性修改：为了兼顾程序的推断速度和准确度，不同于论文中采用的Vgg-16，这里的B-CNN的基础网络采用Resnet-18。</br>
+车辆检测模块：单张图像推断耗时，在单个GTX TITAN GPU上约7ms，在单个GTX 1050TI GPU上单张约10ms。
 
