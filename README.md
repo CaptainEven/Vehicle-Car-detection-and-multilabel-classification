@@ -19,7 +19,8 @@ Before running Vehicle_DC, you should download provided model files provided abo
 #### (1). 程序包含两大模块: </br> The program consists of two parts: first, car detection(only provides model loading and inference code, if you need training code, you can refer to [pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train)); the car attributes classiyfing(provide both training and testing code, it will predict a vehicle's body color, body direction and car type)
 ##### <1>. 车辆检测模块： 只提供检测, 训练代码可以参考[pytorch_yolo_v3](https://github.com/eriklindernoren/PyTorch-YOLOv3#train); </br>
 ##### <2>. 标签识别模块：包含车辆颜色、车辆朝向、车辆类型
-将这两个模块结合在一起，可以同时实现车辆的检测和识别。以此为基础，对室外智能交通信息，进行了一定程度的结构化提取。 Combining these 2 modules together, you can do vehicle detection and multi-label recognization at the same time. Based on this info, you can extract some structured infos in outdoor scenes.
+将这两个模块结合在一起，可以同时实现车辆的检测和识别。以此为基础，对室外智能交通信息，进行了一定程度的结构化提取。 </br>
+Combining these two modules together, you can do vehicle detection and multi-label recognization at the same time. Based on this info, you can extract some structured infos in outdoor scenes.
 #### (2). 程序模块详解 modules detailed introduction </br>
 ##### <1>. VehicleDC.py </br>
 此模块主要是对汽车检测和多标签识别进行封装，输入测试目录和存放结果目录。主类Car_DC, 函数__init__主要负责汽车检测、汽车识别两个模型的初始化。
