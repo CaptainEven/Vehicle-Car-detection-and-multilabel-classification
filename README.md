@@ -38,4 +38,5 @@ Vehicle类重载了data.Dataset的init, getitem, len方法： </br>
 
 ##### <3>. 车辆多标签训练、测试模块 train_vehicle_multilabel.py
 此模块负责车辆多标签的训练和测试。训练过程选择交叉熵作为损失函数，需要注意的是，由于是多标签分类，故计算loss的时候需要累加各个标签的loss，其中loss = loss_color + loss_direction + 2.0 * loss_type，根据经验，将车辆类型的loss权重放到到2倍效果较好。
-
+</br>
+另一方面，训练分为两步：（1）. 冻结除了Resnet-18除全连接层之外的所有层，Fine-tune训练到收敛为止；（2）.打开第一步中冻结的所有层，进一步Fine-tune训练，调整所有层的权重，直至整个模型收敛为止。
