@@ -29,7 +29,7 @@ This module is responsible for interface encapsulation of vehicle detection and 
 ##### 耗时统计耗时 Time consuming
 车辆检测： 单张图像推断耗时，在单个GTX 1050TI GPU上约18ms。 </br>
 车辆多标签识别：单张图像推断耗时，在单个GTX TITAN GPU上约7ms，在单个GTX 1050TI GPU上约10ms。 </br>
-Vehicle detection: sigle image inference cost 18ms on single GTX1050TI.
+Vehicle detection: sigle image inference cost 18ms on single GTX1050TI. </br>
 Vehicle classification: single image inference cost 10ms on single GTX1050TI.
 
 ##### <2>. 车辆多标签数据模块（由于保密协议等原因暂时不能公开数据集） dataset.py </br>
