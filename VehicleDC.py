@@ -43,16 +43,9 @@ if use_cuda:
     torch.cuda.manual_seed_all(0)
 print('=> device: ', device)
 
-# root = 'e:/pick_car_roi'
 local_model_path = './checkpoints/epoch_39.pth'
 local_car_cfg_path = './car.cfg'
 local_car_det_weights_path = './car_detect.weights'
-
-local_color_attrs = ['Black', 'Blue', 'Brown', 'Gray',
-                     'Green', 'Pink', 'Red', 'Violet', 'White', 'Yellow']
-local_direction_attrs = ['Front', 'Rear']
-local_type_attrs = ['passengerCar', 'saloonCar',
-                    'shopTruck', 'suv', 'trailer', 'truck', 'van', 'waggon']
 
 
 class Cls_Net(torch.nn.Module):
