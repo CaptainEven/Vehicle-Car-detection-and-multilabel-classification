@@ -46,7 +46,7 @@ print('=> device: ', device)
 # root = 'e:/pick_car_roi'
 local_model_path = './checkpoints/epoch_39.pth'
 local_car_cfg_path = './car.cfg'
-local_car_det_weights_path = './car_360000.weights'
+local_car_det_weights_path = './car_detect.weights'
 
 local_color_attrs = ['Black', 'Blue', 'Brown', 'Gray',
                      'Green', 'Pink', 'Red', 'Violet', 'White', 'Yellow']
